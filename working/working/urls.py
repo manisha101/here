@@ -20,7 +20,7 @@ from serve import views
 urlpatterns = [
 	 url(r'^admin/', admin.site.urls),
      url(r'^data/', views.datalist.as_view(),name='datas'),
-     url(r'^enter/',views.EnterView,name='enter'),
+     url(r'^enter/',views.EnterView.as_view(),name='enter'),
      url(r'ToDo/',views.ToDo,name="ToDo"),
 ]
 urlpatterns= format_suffix_patterns(urlpatterns)

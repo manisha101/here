@@ -4,4 +4,4 @@ from .models import data
 class dataSerializer(serializers.ModelSerializer):
 	class Meta:
 		model=data
-		fields=('Topic','level','ques','ans')
+		fields=('topic','level','question','answer')

@@ -25,18 +25,18 @@ class EnterView(TemplateView):
 
 	def get(self,request):
 		form=enteryForm()
-		return render(request,self.template_name,{'form':'form'})
+		return render(request,self.template_name,{'form':form})
 	def post(self,request):
-		form=enteryForm[request.POST]
+		form=enteryForm(request.POST)
 		if form.is_valid():
 
-			Topic=cleaned_data['Topic']
-			Level=cleaned_data['Level']
-			Question=cleaned_data['Question']
-			Answer=cleaned_data['Answer']
+			# topic=cleaned_data['topic']
+			# level=cleaned_data['level']
+			# question=cleaned_data['question']
+			# answer=cleaned_data['answer']
 
 			form.save()
 
-			return redirect('ToDo/')
-		args={'form':form,'Topic':Topic,'Level':'Level','Questions':'Question','Answer':'Answer'}
+			return redirect('enter')
+		args={'form':form,'Topic':topic,'Level':level,'Questions':question,'Answer':answer}
 		return render(request,self.template_name,args)

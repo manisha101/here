@@ -5,6 +5,6 @@ class enteryForm(forms.ModelForm):
 
 	class Meta:
 		model=data
-		fields=['Topic','Level','Question','Answer',]
+		fields=['topic','level','question','answer',]
 
 	
